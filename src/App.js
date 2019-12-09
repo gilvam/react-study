@@ -1,12 +1,12 @@
 import React from 'react';
 import logoReact from './assets/imgs/logo-react.svg';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logoReact} className="App-logo" alt="logo" />
+    <div className="app">
+      <header className="app-header">
+        <img src={logoReact} className="app-logo" alt="logo" />
         <p>
           REACT study
         </p>
