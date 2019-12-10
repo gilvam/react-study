@@ -7,60 +7,60 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { HashRouter, NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-  },
-  nested: {
-    paddingLeft: theme.spacing(4),
-  },
   toolbar: theme.mixins.toolbar,
 }));
 
-
-const NavStartItem = (props) => {
+const NavStartItem = () => {
 
   const itens = [
     [
-      { name: 'Inbox', icon: <InboxIcon/> },
-      { name: 'Starred', icon: <MailIcon/> }
+      { name: 'Home', link: '/home', icon: <InboxIcon/> },
+      { name: 'Hooks', link: '/hooks', icon: <MailIcon/> }
     ],
     [
-      { name: 'All mail', icon: <InboxIcon/> },
-      { name: 'Trash', icon: <MailIcon/> }
+      { name: 'All mail', link: '', icon: <InboxIcon/> },
+      { name: 'Trash', link: '', icon: <MailIcon/> }
     ],
   ];
   const classes = useStyles();
-  const theme = useTheme();
+
+  /**
+   * O uso de React.forwardRef não será mais necessário para o react-router-dom v6.
+   * veja aqui https://github.com/ReactTraining/react-router/issues/6056
+   */
+  const AdapterLink = React.forwardRef((props, ref) => (
+      <NavLink innerRef={ ref } { ...props } />
+  ));
 
   return (
-
       <React.Fragment>
         <div className={ classes.toolbar }/>
 
         <Divider/>
 
-        <List>
-          {
-            itens.map((itemContent, i) => {
-              return itemContent.map((item, j) => (
-                  <React.Fragment key={ `${ i }-${ j }-${ item.name }` }>
-                    <ListItem button>
-                      <ListItemIcon>{ item.icon }</ListItemIcon>
-                      <ListItemText primary={ item.name }/>
-                    </ListItem>
-                    { itens.length - 1 === j && !(itens.length - 1 === j && itens.length - 1 === i) && <Divider/> }
-                  </React.Fragment>
-              ));
-            })
-          }
-        </List>
+        <HashRouter>
+          <List>
+            {
+              itens.map((itemContent, i) => {
+                return itemContent.map((item, j) => (
+                    <React.Fragment key={ `${ i }-${ j }-${ item.name }` }>
+                      <ListItem button component={ AdapterLink } to={ item.link }>
+                        <ListItemIcon>{ item.icon }</ListItemIcon>
+                        <ListItemText primary={ item.name }/>
+                      </ListItem>
+                      { itens.length - 1 === j && !(itens.length - 1 === j && itens.length - 1 === i) && <Divider/> }
+                    </React.Fragment>
+                ));
+              })
+            }
+          </List>
+        </HashRouter>
+
       </React.Fragment>
   );
 };
-
 
 export default NavStartItem;

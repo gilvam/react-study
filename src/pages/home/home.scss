@@ -1,7 +1,7 @@
-.app {
+.container-home {
   text-align: center;
 
-  .app-header {
+  .header {
     background-color: #282c34;
     //min-height: 100vh;
     display: flex;
@@ -12,7 +12,7 @@
     color: white;
   }
 
-  .app-logo {
+  .logo {
     height: 20vmin;
     pointer-events: none;
   }
@@ -20,12 +20,12 @@
 
 
 @media (prefers-reduced-motion: no-preference) {
-  .app-logo {
-    animation: app-logo-spin infinite 20s linear;
+  .logo {
+    animation: logo-spin infinite 20s linear;
   }
 }
 
-@keyframes app-logo-spin {
+@keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
