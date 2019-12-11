@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const ResponsiveDrawer = (props) => {
+const App = () => {
   const classes = useStyles();
 
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -49,4 +49,4 @@ const ResponsiveDrawer = (props) => {
   );
 };
 
-export default ResponsiveDrawer;
+export default App;

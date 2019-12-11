@@ -47,7 +47,7 @@ const WebpackPage = () => {
               <ListItemText primary="yarn add -D optimize-css-assets-webpack-plugin" secondary="minificar arquivos js"/>
             </ListItem>
             <ListItem>
-              <ListItemText primary="yarn add -D uglifyjs-webpack-plugin" secondary="minificar arquivos css"/>
+              <ListItemText primary="yarn add -D terser-webpack-plugin" secondary="minificar arquivos css"/>
             </ListItem>
             <ListItem>
               <ListItemText primary="yarn add -D file-loader" secondary="carrega arquivos de imagem"/>
