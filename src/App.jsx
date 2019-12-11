@@ -1,24 +1,52 @@
 import React from 'react';
-import './App.css';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { makeStyles } from '@material-ui/core/styles';
+import NavStart from './components/material/nav-start/nav-start';
+import MatAppBar from './components/material/mat-app-bar';
+import MatMain from './components/material/mat-main';
+import Routes from './routes';
 
-function App() {
+const drawerWidth = 240;
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+  },
+  toolbar: theme.mixins.toolbar,
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+  },
+}));
+
+const ResponsiveDrawer = (props) => {
+  const classes = useStyles();
+
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const drawerToggle = (isToggle = !mobileOpen) => {
+    setMobileOpen(!mobileOpen);
+  };
+
   return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className={ classes.root }>
+        <CssBaseline/>
+
+        <MatAppBar drawerToggle={ drawerToggle }/>
+
+        <NavStart drawerToggle={ drawerToggle } mobileOpen={ mobileOpen }/>
+
+        <MatMain>
+
+          <Routes />
+
+        </MatMain>
+
       </div>
   );
-}
+};
 
-export default App;
+export default ResponsiveDrawer;
