@@ -21,8 +21,7 @@ const NavStartItem = () => {
       { name: 'Hooks', link: '/hooks', icon: <MailIcon/> }
     ],
     [
-      { name: 'All mail', link: '', icon: <InboxIcon/> },
-      { name: 'Trash', link: '', icon: <MailIcon/> }
+      { name: 'Webpack', link: '/webpack', icon: <InboxIcon/> },
     ],
   ];
   const classes = useStyles();
