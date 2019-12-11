@@ -15,12 +15,12 @@
     "react-scripts": "3.3.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development",
+    "start": "react-scripts start",
     "build": "cross-env NODE_ENV=production webpack",
-    "start-default": "react-scripts start",
-    "build-default": "react-scripts build",
-    "testk-default": "react-scripts test",
-    "eject-default": "react-scripts eject"
+    "testk": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start:webpack": "webpack-dev-server",
+    "build:default": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -62,17 +62,5 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "webpack.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gilvam/react-study.git"
-  },
-  "author": "gilvam",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/gilvam/react-study/issues"
-  },
-  "homepage": "https://github.com/gilvam/react-study#readme"
+  }
 }

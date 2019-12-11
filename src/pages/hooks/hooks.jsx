@@ -6,7 +6,7 @@ import './hooks.scss';
 const Hooks = (props) => {
 
   return (
-      <div className="container-home">
+      <div className="container-hooks">
         <header className="header">
           <img src={ logoReact } className="logo" alt="logo"/>
           <p>
