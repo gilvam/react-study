@@ -1,8 +1,18 @@
 import React from 'react';
 import { HashRouter, Route } from 'react-router-dom';
-import Home from './pages/home/home';
-import Hooks from './pages/hooks/hooks';
-import WebpackPage from './pages/webpack/webpack.page';
+import RoutesLazyImport from './routes-lazy-import';
+
+const Home = RoutesLazyImport({
+  loader: () => import('./pages/home/home'/* webpackChunkName: 'home' */),
+});
+
+const Hooks = RoutesLazyImport({
+  loader: () => import('./pages/hooks/hooks'/* webpackChunkName: 'hooks' */),
+});
+
+const WebpackPage = RoutesLazyImport({
+  loader: () => import('./pages/webpack/webpack.page'/* webpackChunkName: 'webpackPage' */),
+});
 
 const Routes = () => (
     <HashRouter>

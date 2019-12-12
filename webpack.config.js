@@ -31,9 +31,15 @@ module.exports = {
       }),
       new OptimizeCSSAssetsPlugin({}) // minifica css
     ],
-    splitChunks: {
-      chunks: 'all',
-    },
+    splitChunks: { // optimization - separa os node_modules em um arquivo separado
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
   },
   plugins: [
     new CleanWebpackPlugin(), // limpa a pasta do build
@@ -56,7 +62,6 @@ module.exports = {
         }
       },
       {
-        // test: /\.s?[ac]ss$/, // ler arquivos .css, .sass e .scss
         test: /\.s?[ac]ss$/, // ler arquivos .css, .sass e .scss
         use: [
           MiniCssExtractPlugin.loader, // mini-css-extract-plugin
@@ -65,39 +70,6 @@ module.exports = {
           'sass-loader', // compila .sass/.scss para CSS
         ]
       },
-      // {
-      //   test: /\.module\.s?[ac]ss$/,
-      //   loader: [
-      //     isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
-      //     {
-      //       loader: 'css-loader',
-      //       options: {
-      //         modules: true,
-      //         sourceMap: isDevelopment
-      //       }
-      //     },
-      //     {
-      //       loader: 'sass-loader',
-      //       options: {
-      //         sourceMap: isDevelopment
-      //       }
-      //     }
-      //   ]
-      // },
-      // {
-      //   test: /\.s?[ac]ss$/,
-      //   exclude: /\.module.s?[ac]ss$/,
-      //   loader: [
-      //     isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
-      //     'css-loader',
-      //     {
-      //       loader: 'sass-loader',
-      //       options: {
-      //         sourceMap: isDevelopment
-      //       }
-      //     }
-      //   ]
-      // },
       {
         test: /\.(png|svg|jpg|gif|ico)$/, // ler arquivos do tipo: .png, .svg. .jpg, .gif
         use: ['file-loader'] // ler arquivos
