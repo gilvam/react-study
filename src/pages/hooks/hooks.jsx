@@ -12,13 +12,12 @@ const Hooks = (props) => {
           <p>
             HOOKS
           </p>
-
-          <Typography paragraph className="typography">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, atque corporis fugit in itaque nobis
-            non quam recusandae ullam! Aperiam asperiores aut beatae impedit nemo nostrum, totam. Maiores vel,
-            voluptatibus.
-          </Typography>
         </header>
+        <Typography paragraph className="typography">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, atque corporis fugit in itaque nobis
+          non quam recusandae ullam! Aperiam asperiores aut beatae impedit nemo nostrum, totam. Maiores vel,
+          voluptatibus.
+        </Typography>
       </div>
   );
 };

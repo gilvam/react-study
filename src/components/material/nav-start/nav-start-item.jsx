@@ -6,7 +6,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { HashRouter, NavLink } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
@@ -21,7 +21,8 @@ const NavStartItem = () => {
       { name: 'Hooks', link: '/hooks', icon: <MailIcon/> }
     ],
     [
-      { name: 'Webpack', link: '/webpack', icon: <InboxIcon/> },
+      { name: 'Webpack', link: '/webpackPage', icon: <InboxIcon/> },
+      { name: 'metodologia RSCSS', link: '/rscssPage', icon: <InboxIcon/> },
     ],
   ];
   const classes = useStyles();

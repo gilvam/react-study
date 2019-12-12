@@ -1,9 +1,10 @@
+$background-color: darkcyan;
+
 .container-hooks {
   text-align: center;
+  background-color: $background-color;
 
   .header {
-    background-color: #282c34;
-    background-color: darkcyan;
     //min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -11,12 +12,18 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+
+    .logo {
+      height: 20vmin;
+      pointer-events: none;
+    }
   }
 
-  .logo {
-    height: 20vmin;
-    pointer-events: none;
+  .typography {
+    color: lighten($background-color, 40%);
+    padding: 10px;
   }
+
 }
 
 
