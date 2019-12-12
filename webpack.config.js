@@ -1,9 +1,10 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const path = require('path');
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
 module.exports = {
@@ -11,7 +12,8 @@ module.exports = {
   entry: './src/index.jsx', // arquivo principal (ponto de entrada)
   output: { // caminho de saída do build
     path: path.resolve(__dirname, 'dist'), // nome da pasta de saída da build
-    filename: isDevelopment ? '[name].js' : '[name]_[hash].js', // nome do arquivo principal dentro da pasta de saída ( path logo a baixo )
+    filename: isDevelopment ? '[name].bundle.js' : '[name]_[hash].bundle.js', // nome do arquivo principal dentro da pasta de saída ( path logo a baixo )
+    chunkFilename: isDevelopment ? '[name].bundle.js' : '[name]_[hash].bundle.js',
   },
   resolve: {
     extensions: ['*', '.js', '.jsx']
@@ -28,23 +30,20 @@ module.exports = {
         parallel: true, // executa com paralelismo para executar o mais rápido possível
       }),
       new OptimizeCSSAssetsPlugin({}) // minifica css
-    ]
+    ],
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   plugins: [
-    new HtmlWebPackPlugin({
+    new CleanWebpackPlugin(), // limpa a pasta do build
+    new HtmlWebPackPlugin({ // copia index.html principal para a pasta da build
       template: './public/index.html',
       filename: './index.html'
     }),
-    // new MiniCssExtractPlugin({ // mini-css-extract-plugin
-    //   filename: 'style.css' // arquivo final gerado com todos os arquivos .css encontrados
-    // })
-    // new MiniCssExtractPlugin({
-    //   filename: '[hash].css',
-    //   chunkFilename: '[hash].css'
-    // })
     new MiniCssExtractPlugin({
       filename: isDevelopment ? '[name].css' : '[name]_[hash].css',
-      // chunkFilename: isDevelopment ? '[id].css' : '[id]_[hash].css'
+      chunkFilename: isDevelopment ? '[id].css' : '[id]_[hash].css'
     })
   ],
   module: {
@@ -106,55 +105,3 @@ module.exports = {
     ]
   }
 };
-
-
-// const path = require('path')
-// const HtmlWebPackPlugin = require("html-webpack-plugin");
-//
-// const htmlWebpackPlugin = new HtmlWebPackPlugin({
-//   template: "./public/index.html",
-//   filename: "./index.html"
-// });
-//
-// module.exports = {
-//   mode:'production', // em prod, minifica arquivos
-//   entry: './src/index.jsx', // arquivo principal (ponto de entrada)
-//   output: { // caminho de saída do build
-//     path: path.resolve(__dirname, 'dist'), // nome da pasta de saída da build
-//     filename: 'bundle.js', // nome do arquivo principal dentro da pasta de saída ( path logo a baixo )
-//   },
-//   devServer: {
-//     contentBase: `./dist`,
-//     port: 9000
-//   },
-//   module: {
-//     rules: [
-//       {
-//         test: /\.js$/,
-//         exclude: /node_modules/,
-//         use: {
-//           loader: "babel-loader"
-//         }
-//       },
-//       {
-//         test: /\.css$/,
-//         use: [
-//           {
-//             loader: "style-loader"
-//           },
-//           {
-//             loader: "css-loader",
-//             options: {
-//               modules: true,
-//               importLoaders: 1,
-//               localIdentName: "[name]_[local]_[hash:base64]",
-//               sourceMap: true,
-//               minimize: true
-//             }
-//           }
-//         ]
-//       }
-//     ]
-//   },
-//   plugins: [htmlWebpackPlugin]
-// };
