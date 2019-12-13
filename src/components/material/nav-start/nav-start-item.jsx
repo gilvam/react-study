@@ -18,6 +18,7 @@ const NavStartItem = () => {
   const itens = [
     [
       { name: 'Home', link: '/home', icon: <InboxIcon/> },
+      { name: 'ECMAScript 6', link: '/ecmascript6Page', icon: <InboxIcon/> },
       { name: 'Hooks', link: '/hooks', icon: <MailIcon/> }
     ],
     [

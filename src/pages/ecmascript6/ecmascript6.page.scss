@@ -1,0 +1,36 @@
+.container-ecmascript6 {
+  //text-align: center;
+
+  > .header {
+    margin-bottom: 20px;
+  }
+
+  .title {
+    color: #595959;
+    font-size: 18px;
+  }
+
+  .subtitle {
+    color: #aaa;
+    font-size: 14px;
+  }
+
+  .code {
+    margin-top: 10px;
+    padding-text-outline: 10px;
+
+    > span {
+      padding: 5px 10px;
+    }
+  }
+
+  .image {
+    max-height: 550px;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .paper {
+    padding: 10px;
+  }
+}
