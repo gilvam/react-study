@@ -40,6 +40,11 @@ const Ecmascript6Page = () => {
             As melhores features do ES6, ES7 e ES8
           </a>
         </div>
+        <div style={ { paddingBottom: 30, display: 'block', } }>
+          <a href="https://codetower.github.io/es6-features/" target="_blank">
+            geral ES6
+          </a>
+        </div>
 
         <Grid container spacing={ 3 }>
           { codeList }

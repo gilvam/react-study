@@ -24,6 +24,7 @@ const NavStartItem = () => {
     [
       { name: 'Webpack', link: '/webpackPage', icon: <InboxIcon/> },
       { name: 'metodologia RSCSS', link: '/rscssPage', icon: <InboxIcon/> },
+      { name: 'Programação funcional', link: '/programFuncPage', icon: <InboxIcon/> },
     ],
   ];
   const classes = useStyles();
