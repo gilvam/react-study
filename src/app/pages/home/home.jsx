@@ -1,5 +1,5 @@
 import React from 'react';
-import logoReact from '../../assets/imgs/logo-react.svg';
+import logoReact from '../../../assets/imgs/logo-react.svg';
 import Typography from '@material-ui/core/Typography';
 import './home.scss';
 

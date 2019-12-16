@@ -1,9 +1,9 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
-import NavStart from './components/material/nav-start/nav-start';
-import MatAppBar from './components/material/mat-app-bar';
-import MatMain from './components/material/mat-main';
+import NavStart from './app/components/material/nav-start/nav-start';
+import MatAppBar from './app/components/material/mat-app-bar';
+import MatMain from './app/components/material/mat-main';
 import Routes from './routes';
 
 const drawerWidth = 240;

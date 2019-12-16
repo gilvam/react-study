@@ -3,27 +3,30 @@ import { HashRouter, Route } from 'react-router-dom';
 import RoutesLazyImport from './routes-lazy-import';
 
 const home = RoutesLazyImport({
-  loader: () => import('./pages/home/home'/* webpackChunkName: 'home' */),
+  loader: () => import('./app/pages/home/home'/* webpackChunkName: 'home' */),
 });
 
 const hooks = RoutesLazyImport({
-  loader: () => import('./pages/hooks/hooks'/* webpackChunkName: 'hooks' */),
+  loader: () => import('./app/pages/hooks/hooks'/* webpackChunkName: 'hooks' */),
 });
 
 const webpackPage = RoutesLazyImport({
-  loader: () => import('./pages/webpack/webpack.page'/* webpackChunkName: 'webpackPage' */),
+  loader: () => import('./app/pages/webpack/webpack.page'/* webpackChunkName: 'webpackPage' */),
 });
 
 const rscssPage = RoutesLazyImport({
-  loader: () => import('./pages/rscss/rscss.page'/* webpackChunkName: 'rscssPage' */),
+  loader: () => import('./app/pages/rscss/rscss.page'/* webpackChunkName: 'rscssPage' */),
 });
 
 const ecmascript6Page = RoutesLazyImport({
-  loader: () => import('./pages/ecmascript6/ecmascript6.page'/* webpackChunkName: 'ecmascript6Page' */),
+  loader: () => import('./app/pages/ecmascript6/ecmascript6.page'/* webpackChunkName: 'ecmascript6Page' */),
 });
 
 const programFuncPage = RoutesLazyImport({
-  loader: () => import('./pages/program-func/program-func.page'/* webpackChunkName: 'programFuncPage' */),
+  loader: () => import('./app/pages/program-func/program-func.page'/* webpackChunkName: 'programFuncPage' */),
+});
+const libAxiosPage = RoutesLazyImport({
+  loader: () => import('./app/pages/lib-axios/lib-axios.page'/* webpackChunkName: 'libAxiosPage' */),
 });
 
 const Routes = () => (
@@ -35,6 +38,7 @@ const Routes = () => (
       <Route path="/rscssPage" component={ rscssPage }/>
       <Route path="/ecmascript6Page" component={ ecmascript6Page }/>
       <Route path="/programFuncPage" component={ programFuncPage }/>
+      <Route path="/libAxiosPage" component={ libAxiosPage }/>
     </HashRouter>
 );
 

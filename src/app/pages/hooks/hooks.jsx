@@ -25,14 +25,14 @@ const Hooks = () => {
         </header>
 
         <form noValidate autoComplete="off">
-          <Button variant="contained" color="secondary" size="large" className="btn"
+          <Button variant="contained" color="secondary" size="small" className="btn"
                   onClick={ () => updateAge(todo.age - 1) }>-</Button>
 
           <TextField id="form-field" label="Age" variant="outlined" value={ todo.age } type="number"
                      onChange={ (e) => updateAge(e.target.value) }
           />
 
-          <Button variant="contained" color="secondary" size="large" className="btn"
+          <Button variant="contained" color="secondary" size="small" className="btn"
                   onClick={ () => updateAge(todo.age + 1) }>+</Button>
         </form>
 

@@ -1,13 +1,18 @@
 import React from 'react';
 import Divider from '@material-ui/core/Divider';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
 import { makeStyles } from '@material-ui/core/styles';
 import { HashRouter, NavLink } from 'react-router-dom';
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import FunctionsIcon from '@material-ui/icons/Functions';
+import ClassIcon from '@material-ui/icons/Class';
+import BusinessIcon from '@material-ui/icons/Business';
+import RvHookupIcon from '@material-ui/icons/RvHookup';
+import CodeIcon from '@material-ui/icons/Code';
+import HomeIcon from '@material-ui/icons/Home';
 
 const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
@@ -17,14 +22,15 @@ const NavStartItem = () => {
 
   const itens = [
     [
-      { name: 'Home', link: '/home', icon: <InboxIcon/> },
-      { name: 'ECMAScript 6', link: '/ecmascript6Page', icon: <InboxIcon/> },
-      { name: 'Hooks', link: '/hooks', icon: <MailIcon/> }
+      { name: 'Home', link: '/home', icon: <HomeIcon/> },
+      { name: 'ECMAScript 6', link: '/ecmascript6Page', icon: <CodeIcon/> },
+      { name: 'Hooks', link: '/hooks', icon: <RvHookupIcon/> }
     ],
     [
-      { name: 'Webpack', link: '/webpackPage', icon: <InboxIcon/> },
-      { name: 'metodologia RSCSS', link: '/rscssPage', icon: <InboxIcon/> },
-      { name: 'Programação funcional', link: '/programFuncPage', icon: <InboxIcon/> },
+      { name: 'Webpack', link: '/webpackPage', icon: <BusinessIcon/> },
+      { name: 'metodologia RSCSS', link: '/rscssPage', icon: <ClassIcon/> },
+      { name: 'Programação funcional', link: '/programFuncPage', icon: <FunctionsIcon/> },
+      { name: 'Lib axios', link: '/libAxiosPage', icon: <LibraryBooksIcon/> },
     ],
   ];
   const classes = useStyles();
