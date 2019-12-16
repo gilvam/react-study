@@ -1,43 +1,17 @@
-$background-color: darkcyan;
-
 .container-hooks {
-  text-align: center;
-  background-color: $background-color;
 
-  .header {
-    //min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  header {
+    margin-bottom: 50px;
+  }
 
-    .logo {
-      height: 20vmin;
-      pointer-events: none;
+  form {
+    #form-field {
+      width: 50px;
+      text-align: center;
     }
   }
 
-  .typography {
-    color: lighten($background-color, 40%);
-    padding: 10px;
-  }
-
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .btn {
+    margin: 8px;
   }
 }

@@ -56,7 +56,7 @@ const MatAppBar = (props) => {
           </IconButton>
 
           <Typography className={ classes.title } variant="h5" noWrap>
-            Material-UI
+            react study
           </Typography>
 
           <IconButton aria-label="search" color="inherit">
