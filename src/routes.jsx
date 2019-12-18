@@ -28,6 +28,9 @@ const programFuncPage = RoutesLazyImport({
 const libAxiosPage = RoutesLazyImport({
   loader: () => import('./app/pages/lib-axios/lib-axios.page'/* webpackChunkName: 'libAxiosPage' */),
 });
+const authPage = RoutesLazyImport({
+  loader: () => import('./app/pages/auth/auth.page'/* webpackChunkName: 'authPage' */),
+});
 
 const Routes = () => (
     <HashRouter>
@@ -39,6 +42,7 @@ const Routes = () => (
       <Route path="/ecmascript6Page" component={ ecmascript6Page }/>
       <Route path="/programFuncPage" component={ programFuncPage }/>
       <Route path="/libAxiosPage" component={ libAxiosPage }/>
+      <Route path="/authPage" component={ authPage }/>
     </HashRouter>
 );
 

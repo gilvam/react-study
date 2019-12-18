@@ -36,12 +36,12 @@ const Ecmascript6Page = () => {
         </header>
 
         <div style={ { paddingBottom: 30, display: 'block', } }>
-          <a href="https://blog.rocketseat.com.br/as-melhores-features-do-es6-es7-e-es8/" target="_blank">
+          <a href="https://blog.rocketseat.com.br/as-melhores-features-do-es6-es7-e-es8/" target="_blank" rel="noopener noreferrer">
             As melhores features do ES6, ES7 e ES8
           </a>
         </div>
         <div style={ { paddingBottom: 30, display: 'block', } }>
-          <a href="https://codetower.github.io/es6-features/" target="_blank">
+          <a href="https://codetower.github.io/es6-features/" target="_blank" rel="noopener noreferrer">
             geral ES6
           </a>
         </div>

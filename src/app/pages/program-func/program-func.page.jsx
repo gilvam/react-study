@@ -16,10 +16,10 @@ const ProgramFuncPage = () => {
         </header>
 
         <List>
-          <ListItem target="_blank" component="a" href="https://www.youtube.com/watch?v=BWFpUHPqh1g&vl=pt-BR">
+          <ListItem target="_blank" rel="noopener noreferrer" component="a" href="https://www.youtube.com/watch?v=BWFpUHPqh1g&vl=pt-BR">
             <ListItemText primary="Entenda a programação funcional em 12 minutos" secondary="pt-br"/>
           </ListItem>
-          <ListItem target="_blank" component="a" href="https://medium.com/@leandrotk_/princ%C3%ADpios-de-programa%C3%A7%C3%A3o-funcional-com-javascript-37ec5d6afab9">
+          <ListItem target="_blank" rel="noopener noreferrer" component="a" href="https://medium.com/@leandrotk_/princ%C3%ADpios-de-programa%C3%A7%C3%A3o-funcional-com-javascript-37ec5d6afab9">
             <ListItemText primary="Princípios de Programação Funcional com JavaScript" secondary="pt-br"/>
           </ListItem>
 

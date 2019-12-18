@@ -16,10 +16,10 @@ const RscssPage = () => {
         </header>
 
         <List>
-          <ListItem target="_blank" component="a" href="https://willianjusten.com.br/falando-sobre-rscss/">
+          <ListItem target="_blank" rel="noopener noreferrer" component="a" href="https://willianjusten.com.br/falando-sobre-rscss/">
             <ListItemText primary="https://willianjusten.com.br/falando-sobre-rscss/" secondary="pt-br"/>
           </ListItem>
-          <ListItem target="_blank" component="a" href="https://rscss.io/elements.html">
+          <ListItem target="_blank" rel="noopener noreferrer" component="a" href="https://rscss.io/elements.html">
             <ListItemText primary="https://rscss.io/elements.html" secondary="official site"/>
           </ListItem>
         </List>

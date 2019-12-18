@@ -13,6 +13,7 @@ import BusinessIcon from '@material-ui/icons/Business';
 import RvHookupIcon from '@material-ui/icons/RvHookup';
 import CodeIcon from '@material-ui/icons/Code';
 import HomeIcon from '@material-ui/icons/Home';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 const useStyles = makeStyles(theme => ({
   toolbar: theme.mixins.toolbar,
@@ -31,6 +32,7 @@ const NavStartItem = () => {
       { name: 'metodologia RSCSS', link: '/rscssPage', icon: <ClassIcon/> },
       { name: 'Programação funcional', link: '/programFuncPage', icon: <FunctionsIcon/> },
       { name: 'Lib axios', link: '/libAxiosPage', icon: <LibraryBooksIcon/> },
+      { name: 'Auth', link: '/authPage', icon: <ExitToAppIcon/> },
     ],
   ];
   const classes = useStyles();
