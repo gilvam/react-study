@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import NavStartItem from './nav-start-item';
+import NavStartList from './nav-start-list';
+
 
 const drawerWidth = 260;
 
@@ -36,25 +37,14 @@ const NavStart = (props) => {
               anchor={ theme.direction === 'rtl' ? 'right' : 'left' }
               open={ props.mobileOpen }
               onClose={ props.drawerToggle }
-              classes={ {
-                paper: classes.drawerPaper,
-              } }
-              ModalProps={ {
-                keepMounted: true, // Better open performance on mobile.
-              } }
+              ModalProps={ { keepMounted: true, } } // Better open performance on mobile.
           >
-            <NavStartItem drawerToggle={props.drawerToggle} />
+            <NavStartList drawerToggle={ props.drawerToggle }/>
           </Drawer>
         </Hidden>
         <Hidden xsDown implementation="css">
-          <Drawer
-              classes={ {
-                paper: classes.drawerPaper,
-              } }
-              variant="permanent"
-              open
-          >
-            <NavStartItem drawerToggle={props.drawerToggle} />
+          <Drawer variant="permanent" open classes={ { paper: classes.drawerPaper } }>
+            <NavStartList drawerToggle={ props.drawerToggle }/>
           </Drawer>
         </Hidden>
       </nav>

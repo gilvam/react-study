@@ -1,4 +1,3 @@
-import './auth.page.scss';
 import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -12,8 +11,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import { withStyles } from '@material-ui/core/styles';
 import { Formik, } from 'formik';
 import * as Yup from 'yup';
-import SnackBar from '../../components/material/snackbar/snackbar';
-
+import SnackBar from '../../../components/material/snackbar/snackbar';
+import { FormikHelper } from './formik-helper';
 
 const styles = theme => ({
   closeButton: {
@@ -24,7 +23,7 @@ const styles = theme => ({
   },
 });
 
-const AuthPage = withStyles(styles)(props => {
+const FormikPage = withStyles(styles)(props => {
   const { classes } = props;
 
   const [open, setOpen] = useState(false);
@@ -102,7 +101,7 @@ const AuthPage = withStyles(styles)(props => {
                         <Button type="submit" color="primary" disabled={ f.isSubmitting }> GO! </Button>
                       </DialogActions>
 
-                      {/*<FormikHelper { ...props } />*/ }
+                      <FormikHelper { ...props } />
                     </form>
                   </>
               }
@@ -117,4 +116,4 @@ const AuthPage = withStyles(styles)(props => {
   );
 });
 
-export default AuthPage;
+export default FormikPage;
