@@ -14,10 +14,15 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 import NavStartListItem from './nav-start-list-item';
 import PermDataSettingIcon from '@material-ui/icons/PermDataSetting';
+import UserCurrent from './user-current';
+import NavLogo from './nav-logo';
 
 const NavStartList = () => {
   const classes = makeStyles(theme => ({
     toolbar: theme.mixins.toolbar,
+    listOverFlow: {
+      overflowY: 'auto',
+    }
   }))();
 
   const itens = [
@@ -43,24 +48,18 @@ const NavStartList = () => {
     ]
   ];
 
-  const listMapChild = () => {
-    return <h1>oi</h1>;
-  };
-
   return (
-      <React.Fragment>
-        <div className={ classes.toolbar }/>
-
-        <Divider/>
+      <>
+        <NavLogo />
 
         <HashRouter>
-          <List>
+          <List className={ classes.listOverFlow }>
             {
               itens.map((itemContent, i) => (
                   itemContent.map((item, j) => (
                       <React.Fragment key={ `${ i }-${ j }-${ item.name }` }>
                         { i !== 0 && j === 0 && <Divider/> }
-                        <NavStartListItem { ...item } listMap={ listMapChild }/>
+                        <NavStartListItem { ...item } />
                       </React.Fragment>
                   ))
               ))
@@ -68,7 +67,7 @@ const NavStartList = () => {
           </List>
         </HashRouter>
 
-      </React.Fragment>
+      </>
   );
 };
 
